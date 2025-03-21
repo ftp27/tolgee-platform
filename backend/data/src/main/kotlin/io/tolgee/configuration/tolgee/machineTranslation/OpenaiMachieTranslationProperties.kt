@@ -24,5 +24,6 @@ open class OpenaiMachineTranslationProperties(
   )
   var prompt: String =
     "Translate the following text from {source} to {target}: \"{text}\". " +
-      "Do not include any other information in the response.",
+      "No commentaries, no extra quotation marks or punctuation marks. " + 
+      "Ex.: \"hello\", Resp: hola",
 ) : MachineTranslationServiceProperties
