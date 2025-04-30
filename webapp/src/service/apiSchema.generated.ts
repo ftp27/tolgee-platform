@@ -2828,6 +2828,7 @@ export interface components {
         | "AZURE"
         | "BAIDU"
         | "TOLGEE"
+        | "OPENAI"
       )[];
       /** @description Info about enabled services */
       enabledServicesInfo: components["schemas"]["MtServiceInfo"][];
@@ -2841,7 +2842,8 @@ export interface components {
         | "DEEPL"
         | "AZURE"
         | "BAIDU"
-        | "TOLGEE";
+        | "TOLGEE"
+        | "OPENAI";
       primaryServiceInfo?: components["schemas"]["MtServiceInfo"];
       /**
        * Format: int64
@@ -2975,6 +2977,7 @@ export interface components {
         | "AZURE"
         | "BAIDU"
         | "TOLGEE"
+        | "OPENAI"
       )[];
       /** @description Info about enabled services */
       enabledServicesInfo?: components["schemas"]["MtServiceInfo"][];
@@ -2988,7 +2991,8 @@ export interface components {
         | "DEEPL"
         | "AZURE"
         | "BAIDU"
-        | "TOLGEE";
+        | "TOLGEE"
+        | "OPENAI";
       primaryServiceInfo?: components["schemas"]["MtServiceInfo"];
       /**
        * Format: int64
@@ -3030,7 +3034,7 @@ export interface components {
     /** @description Info about enabled services */
     MtServiceInfo: {
       formality?: "FORMAL" | "INFORMAL" | "DEFAULT";
-      serviceType: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE";
+      serviceType: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE" | "OPENAI";
     };
     MtServicesDTO: {
       defaultPrimaryService?:
@@ -3039,12 +3043,13 @@ export interface components {
         | "DEEPL"
         | "AZURE"
         | "BAIDU"
-        | "TOLGEE";
+        | "TOLGEE"
+        | "OPENAI";
       services: { [key: string]: components["schemas"]["MtServiceDTO"] };
     };
     MtSupportedService: {
       formalitySupported: boolean;
-      serviceType: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE";
+      serviceType: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE" | "OPENAI";
     };
     NamespaceModel: {
       /**
@@ -4652,7 +4657,7 @@ export interface components {
       keyId?: number;
       plural?: boolean;
       /** @description List of services to use. If null, then all enabled services are used. */
-      services?: ("GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE")[];
+      services?: ("GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE" | "OPENAI")[];
       /** Format: int64 */
       targetLanguageId: number;
     };
@@ -4851,7 +4856,7 @@ export interface components {
        */
       id: number;
       /** @description Which machine translation service was used to auto translate this */
-      mtProvider?: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE";
+      mtProvider?: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE" | "OPENAI";
       /** @description Whether base language translation was changed after this translation was updated */
       outdated: boolean;
       /** @description State of translation */
@@ -4887,7 +4892,7 @@ export interface components {
        */
       id: number;
       /** @description Which machine translation service was used to auto translate this */
-      mtProvider?: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE";
+      mtProvider?: "GOOGLE" | "AWS" | "DEEPL" | "AZURE" | "BAIDU" | "TOLGEE" | "OPENAI";
       /** @description Whether base language translation was changed after this translation was updated */
       outdated: boolean;
       /** @description State of translation */

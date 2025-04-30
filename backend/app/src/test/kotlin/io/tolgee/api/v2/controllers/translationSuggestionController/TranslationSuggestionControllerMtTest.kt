@@ -237,6 +237,7 @@ class TranslationSuggestionControllerMtTest : ProjectAuthControllerTest("/v2/pro
         node("AZURE").isEqualTo("Translated with Azure Cognitive")
         node("BAIDU").isEqualTo("Translated with Baidu")
         node("TOLGEE").isEqualTo("Translated with Tolgee Translator")
+        node("OPENAI").isEqualTo("Translated with OpenAI")
       }
 
       mtCreditBucketService.getCreditBalances(
@@ -262,6 +263,7 @@ class TranslationSuggestionControllerMtTest : ProjectAuthControllerTest("/v2/pro
         node("AZURE").isAbsent()
         node("BAIDU").isAbsent()
         node("TOLGEE").isEqualTo("Translated with Tolgee Translator")
+        node("OPENAI").isEqualTo("Translated with OpenAI")
       }
     }
   }
