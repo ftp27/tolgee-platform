@@ -26,4 +26,10 @@ open class OpenaiMachineTranslationProperties(
     "Translate the following text from {source} to {target}: \"{text}\". " +
       "No commentaries, no extra quotation marks or punctuation marks. " + 
       "Ex.: \"hello\", Resp: hola",
+  @DocProperty(description = "Connection timeout in milliseconds")
+  var connectionTimeout: Int = 10000,
+  @DocProperty(description = "Response timeout in milliseconds")
+  var responseTimeout: Int = 30000,
+  @DocProperty(description = "Maximum retry attempts for failed API calls")
+  var maxRetryAttempts: Int = 3,
 ) : MachineTranslationServiceProperties
