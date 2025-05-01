@@ -24,6 +24,8 @@ open class OpenaiMachineTranslationProperties(
   )
   var prompt: String =
     "Translate the following text from {source} to {target}: \"{text}\". " +
+      "Preserve case sensitivity, keep all emojis as they are, " + 
+      "and maintain capitalization of the first letter if it was in original text." +
       "No commentaries, no extra quotation marks or punctuation marks. " + 
       "Ex.: \"hello\", Resp: hola",
   @DocProperty(
@@ -31,6 +33,8 @@ open class OpenaiMachineTranslationProperties(
   )
   var batchPrompt: String =
     "Translate the following texts from {source} to {target}. " +
+      "Preserve case sensitivity, keep all emojis as they are, " + 
+      "and maintain capitalization of the first letter if it was in original text." +
       "Return JSON array of translated strings in the same order. " +
       "No commentaries or explanations. Strictly follow the format. " +
       "Input texts: {texts}",
