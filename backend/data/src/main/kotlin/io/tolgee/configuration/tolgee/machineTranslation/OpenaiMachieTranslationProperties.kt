@@ -24,6 +24,8 @@ open class OpenaiMachineTranslationProperties(
   )
   var prompt: String =
     "Translate the following text from {source} to {target}: \"{text}\". " +
+      "Preserve case sensitivity, keep all emojis as they are, " + 
+      "and maintain capitalization of the first letter if it was in original text." +
       "No commentaries, no extra quotation marks or punctuation marks. " + 
       "Ex.: \"hello\", Resp: hola",
   @DocProperty(description = "Connection timeout in milliseconds")
